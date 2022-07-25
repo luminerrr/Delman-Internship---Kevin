@@ -103,7 +103,6 @@ export default function TitleTransformer(){
                 <Button colorScheme='gray' onClick={()=>setCount(count+1)} disabled={increamentDisable()}>Add Title</Button>
                 <Button colorScheme='gray'onClick={()=>setCount(count-1)} disabled={decreamentDisable()}>Remove Title</Button>
             </ButtonGroup>
-            <Text>{isRandom.toString()}</Text>
         </HStack>
     </VStack>
     </>)

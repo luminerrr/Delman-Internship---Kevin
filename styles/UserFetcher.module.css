@@ -1,0 +1,16 @@
+.name{
+    font-size: larger;
+}
+
+.email{
+    color: gray;
+}
+
+.nat{
+    font-weight: bold;
+}
+
+.nationality{
+    color: gray;
+    font-size: small;
+}

@@ -7,11 +7,11 @@ import styles from '../styles/Home.module.css';
 
 
 export default function Home(){
-    function Feature({ title, desc, ...rest }) {
+    function Feature({ title, desc, hrefLink, ...rest }) {
         return (
             <Center>
                 <Box p={5} shadow='md' borderWidth='1px' {...rest} w="20rem" h="8rem">
-                <Heading fontSize='xl'><a href="#">{title} </a> <ArrowForwardIcon /></Heading>
+                <Heading fontSize='xl'><a href={hrefLink}>{title} </a> <ArrowForwardIcon /></Heading>
                 <Text mt={4}>{desc}</Text>
                 </Box>
             </Center>
@@ -38,9 +38,11 @@ export default function Home(){
         </Heading>
         <HStack spacing="2rem">
             <Feature title='Divider'
-                    desc='A simple title transformation'/>
+                    desc='A simple title transformation'
+                    hrefLink='/title-transformer'/>
             <Feature title='User Fetcher'
-                    desc='A simple API Fetching and rendering process'/>
+                    desc='A simple API Fetching and rendering process'
+                    hrefLink='/user-fetcher'/>
         </HStack>
     </VStack>
     
