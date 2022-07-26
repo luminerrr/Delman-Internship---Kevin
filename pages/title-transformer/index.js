@@ -18,7 +18,7 @@ import styles from '../../styles/Home.module.css';
 export default function TitleTransformer(){
     const [count, setCount] = useState(1);
     const [isRandom, setIsRandom] = useState(false);
-    const [randColor, setRandColor] = useState();
+    const [time, setTime] = useState(0);
     const arrayCount = Array.from({length:count}, (_,i)=>i+1);
 
     function increamentDisable(){
@@ -33,6 +33,17 @@ export default function TitleTransformer(){
         }return false
     }
 
+    useEffect(()=>{
+        let interval;
+        if(isRandom){
+            interval = setInterval(()=>{
+                setTime((time)=>time+1);
+            }, 1000)
+        } return ()=>{
+            clearInterval(interval)
+            setTime(0)};
+    }, [isRandom]);
+
 
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
@@ -42,16 +53,6 @@ export default function TitleTransformer(){
         }
         return color;
     }
-
-    // function getInterval(){
-    //     let randomColor
-    //     setInterval(()=>{
-    //         randomColor = getRandomColor();
-    //     }, 1000);
-    //     return randomColor;
-    // }
-    
-    
 
     return(<>
     <div className={styles.container}>
@@ -74,6 +75,7 @@ export default function TitleTransformer(){
     </div>
     <VStack divider={<Center><StackDivider borderColor='gray.200' w="40rem" /></Center>} spacing="1rem" pt={20}>
         {arrayCount.map(x => {
+            let color = getRandomColor();
             if(isRandom === false){
                 return(<>
                     <Heading as='h3' color='black' >
@@ -82,7 +84,7 @@ export default function TitleTransformer(){
                 </>)
             }else{
                 return(
-                    <Heading as='h3' color={getRandomColor()} >
+                    <Heading as='h3' color={color} >
                         Internship Program - {x}
                     </Heading>
                 )
@@ -91,7 +93,7 @@ export default function TitleTransformer(){
         
         <HStack divider={<StackDivider borderColor='gray.200' />} spacing="1.5rem">
             <Box>
-                Running for: 0s
+                Running for: {time}s
             </Box>
             <Box>
                 Title Count : {count}
@@ -99,7 +101,7 @@ export default function TitleTransformer(){
         </HStack>
         <HStack spacing="1.5rem">
             <ButtonGroup>
-                <Button colorScheme='gray' onClick={()=>isRandom === false ? setIsRandom(true):setIsRandom(false)}>Randomize Color</Button>
+                <Button colorScheme='gray' onClick={()=>setIsRandom(!isRandom)}>{isRandom? 'Clear Color':'Randomize Color'}</Button>
                 <Button colorScheme='gray' onClick={()=>setCount(count+1)} disabled={increamentDisable()}>Add Title</Button>
                 <Button colorScheme='gray'onClick={()=>setCount(count-1)} disabled={decreamentDisable()}>Remove Title</Button>
             </ButtonGroup>
