@@ -39,7 +39,9 @@ export default function TitleTransformer(){
             interval = setInterval(()=>{
                 setTime((time)=>time+1);
             }, 1000)
-        } return ()=>clearInterval(interval);
+        } return ()=>{
+            clearInterval(interval)
+            setTime(0)};
     }, [isRandom]);
 
 
@@ -51,16 +53,6 @@ export default function TitleTransformer(){
         }
         return color;
     }
-
-    // function getInterval(){
-    //     let randomColor
-    //     setInterval(()=>{
-    //         randomColor = getRandomColor();
-    //     }, 1000);
-    //     return randomColor;
-    // }
-    
-    
 
     return(<>
     <div className={styles.container}>
@@ -109,7 +101,7 @@ export default function TitleTransformer(){
         </HStack>
         <HStack spacing="1.5rem">
             <ButtonGroup>
-                <Button colorScheme='gray' onClick={()=>setIsRandom(!isRandom)}>Randomize Color</Button>
+                <Button colorScheme='gray' onClick={()=>setIsRandom(!isRandom)}>{isRandom? 'Clear Color':'Randomize Color'}</Button>
                 <Button colorScheme='gray' onClick={()=>setCount(count+1)} disabled={increamentDisable()}>Add Title</Button>
                 <Button colorScheme='gray'onClick={()=>setCount(count-1)} disabled={decreamentDisable()}>Remove Title</Button>
             </ButtonGroup>

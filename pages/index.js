@@ -11,7 +11,7 @@ export default function Home(){
         return (
             <Center>
                 <Box p={5} shadow='md' borderWidth='1px' {...rest} w="20rem" h="8rem">
-                <Heading fontSize='xl'><a href={hrefLink}>{title} </a> <ArrowForwardIcon /></Heading>
+                <Heading fontSize='xl' className={styles.titleheader}><a href={hrefLink}>{title} </a> <ArrowForwardIcon /></Heading>
                 <Text mt={4}>{desc}</Text>
                 </Box>
             </Center>
@@ -37,7 +37,7 @@ export default function Home(){
             Internship Program
         </Heading>
         <HStack spacing="2rem">
-            <Feature title='Divider'
+            <Feature title='Title Transformer'
                     desc='A simple title transformation'
                     hrefLink='/title-transformer'/>
             <Feature title='User Fetcher'
