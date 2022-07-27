@@ -10,7 +10,6 @@ import {
     BreadcrumbLink,
     Button,
     ButtonGroup,
-    Text
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
