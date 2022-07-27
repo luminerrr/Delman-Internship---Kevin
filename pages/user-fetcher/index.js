@@ -9,16 +9,17 @@ import {
     BreadcrumbItem,
     BreadcrumbLink,
     Button,
-    ButtonGroup,
+    Avatar,
     Text,
     SkeletonText,
-    SkeletonCircle,
     Image
 } from "@chakra-ui/react";
 import axios from "axios";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from '../../styles/Home.module.css';
 import styles2 from '../../styles/UserFetcher.module.css';
+import icon from '../../public/favicon.ico'
 
 export default function UserFetcher({data}){
     const [loaded, setLoaded] = useState(true);
@@ -45,13 +46,18 @@ export default function UserFetcher({data}){
     
     function SkeletonLoading(){
         return(<>
-            <SkeletonCircle size='20'isLoaded={!loaded}/>
-            <SkeletonText mt='4' noOfLines={6}  w='14rem'isLoaded={!loaded}/>
+            <Avatar size='xl' isLoaded={!loaded}/>
+            <SkeletonText mt='4' noOfLines={8}  w='14rem'isLoaded={!loaded}/>
         </>)
     }
 
 
     return(<>
+    <Head>
+        <title>Internship Program | User Fetcher</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href={icon} />
+    </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
@@ -76,7 +82,7 @@ export default function UserFetcher({data}){
         </Heading>
         <Center 
         padding='6' 
-        boxShadow='lg' 
+        boxShadow='2xl' 
         bg='white' 
         w='18rem'
         border='1px'

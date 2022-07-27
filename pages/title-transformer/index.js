@@ -12,8 +12,10 @@ import {
     ButtonGroup,
     Text
 } from "@chakra-ui/react";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from '../../styles/Home.module.css';
+import icon from '../../public/favicon.ico';
 
 export default function TitleTransformer(){
     const [count, setCount] = useState(1);
@@ -55,6 +57,11 @@ export default function TitleTransformer(){
     }
 
     return(<>
+    <Head>
+        <title>Title Transformer</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href={icon} />
+    </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
@@ -64,10 +71,10 @@ export default function TitleTransformer(){
             <Box>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Internship Program</BreadcrumbLink>
+                        <BreadcrumbLink href="/">Internship Program | Title Transformer</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbItem isCurrentPage>
-                        <BreadcrumbLink href="#">Title Transformer</BreadcrumbLink>
+                        <BreadcrumbLink>Title Transformer</BreadcrumbLink>
                     </BreadcrumbItem>
                 </Breadcrumb>
             </Box>

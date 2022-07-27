@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 import { Heading, Text, HStack, StackDivider, Box, VStack, Center } from "@chakra-ui/react";
 import {ArrowForwardIcon} from '@chakra-ui/icons'
 import styles from '../styles/Home.module.css';
+import icon from '../public/favicon.ico';
 
 
 
@@ -20,11 +20,16 @@ export default function Home(){
       }
 
     return(<>
+    <Head>
+        <title>Internship Program</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="shortcut icon" href={icon} />
+    </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
             <Box className={styles.delmantitle}>
-                <a href="#">delman.io</a>
+                <a href="/">delman.io</a>
             </Box>
             <Box>
                 Internship Program
