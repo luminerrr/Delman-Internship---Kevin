@@ -19,7 +19,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from '../../styles/Home.module.css';
 import styles2 from '../../styles/UserFetcher.module.css';
-import icon from '../../public/favicon.ico'
 
 export default function UserFetcher({data}){
     const [loaded, setLoaded] = useState(true);
@@ -56,7 +55,6 @@ export default function UserFetcher({data}){
     <Head>
         <title>Internship Program | User Fetcher</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href={icon} />
     </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
