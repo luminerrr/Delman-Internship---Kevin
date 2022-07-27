@@ -15,7 +15,6 @@ import {
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from '../../styles/Home.module.css';
-import icon from '../../public/favicon.ico';
 
 export default function TitleTransformer(){
     const [count, setCount] = useState(1);
@@ -60,7 +59,6 @@ export default function TitleTransformer(){
     <Head>
         <title>Title Transformer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="shortcut icon" href={icon} />
     </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
