@@ -63,12 +63,12 @@ export default function TitleTransformer(){
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
             <Box className={styles.delmantitle}>
-                <a href="#">delman.io</a>
+                <a href="#">Next.js</a>
             </Box>
             <Box>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Internship Program | Title Transformer</BreadcrumbLink>
+                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbItem isCurrentPage>
                         <BreadcrumbLink>Title Transformer</BreadcrumbLink>
@@ -83,13 +83,13 @@ export default function TitleTransformer(){
             if(isRandom === false){
                 return(<>
                     <Heading as='h3' color='black' >
-                        Internship Program - {x}
+                        This is a text - {x}
                     </Heading>
                 </>)
             }else{
                 return(
                     <Heading as='h3' color={color} >
-                        Internship Program - {x}
+                        This is a text - {x}
                     </Heading>
                 )
             }

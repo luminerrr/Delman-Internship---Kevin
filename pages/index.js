@@ -20,24 +20,21 @@ export default function Home(){
 
     return(<>
     <Head>
-        <title>Internship Program</title>
+        <title>Home</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
             <Box className={styles.delmantitle}>
-                <a href="/">delman.io</a>
-            </Box>
-            <Box>
-                Internship Program
+                <a href="/">Next.js</a>
             </Box>
         </HStack>
     </div>
     
     <VStack divider={<Center><StackDivider borderColor='gray.200' w="40rem" /></Center>} spacing="2rem" pt={20}>
         <Heading as='h3'>
-            Internship Program
+            Choose something below
         </Heading>
         <HStack spacing="2rem">
             <Feature title='Title Transformer'

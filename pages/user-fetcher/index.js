@@ -53,19 +53,19 @@ export default function UserFetcher({data}){
 
     return(<>
     <Head>
-        <title>Internship Program | User Fetcher</title>
+        <title>User Fetcher</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <div className={styles.container}>
         <HStack spacing='1rem'
                 divider={<StackDivider borderColor='gray.400' />}>
             <Box className={styles.delmantitle}>
-                <a href="#">delman.io</a>
+                <a href="/">Next.js</a>
             </Box>
             <Box>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Internship Program</BreadcrumbLink>
+                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbItem isCurrentPage>
                         <BreadcrumbLink href="#">User Fetcher</BreadcrumbLink>
